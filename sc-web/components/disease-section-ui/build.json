@@ -1,0 +1,11 @@
+{
+     "sources": [
+
+        "src/disease-section-common.js",
+        "src/disease-section-paintPanel.js"
+    ],
+
+    "component": "src/disease-section-component.js",
+
+    "target": "static/components/js/disease-section-ui/disease-section-ui.js"
+}

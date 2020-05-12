@@ -1,0 +1,15 @@
+#classification-btn:hover, #ICD-btn:hover,
+ #illness-button:hover, #disease-button:hover,
+#search-btn:hover, #prophylax-button:hover{
+border-color: #008CBA;
+}
+
+#classification-btn, #ICD-btn,
+ #illness-button, #disease-button,
+#search-btn, #prophylax-button{
+ transition: 0.35s linear; /* vendorless fallback */
+    -o-transition: 0.35s linear; /* opera */
+    -ms-transition: 0.35s linear; /* IE 10 */
+    -moz-transition: 0.35s linear; /* Firefox */
+    -webkit-transition: 0.35s linear; /*safari and chrome */
+}
