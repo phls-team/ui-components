@@ -2,11 +2,11 @@
  * Paint panel.
  */
 
-Example.PaintPanel = function (containerId) {
+DiseasesSection.PaintPanel = function (containerId) {
     this.containerId = containerId;
 };
 
-Example.PaintPanel.prototype = {
+DiseasesSection.PaintPanel.prototype = {
 
     init: function () {
         this._initMarkup(this.containerId);
@@ -40,7 +40,7 @@ container.append('<select id="disease-search-select">'
 +'</option>'
 +'</select>');
 container.append('<button id="search-btn" type="button">Поиск</button>');
-    
+
       $('#ICD-btn').click(function(){
         self._showICD();
       });

@@ -1,1 +1,5 @@
-Disease_section <- ui_external_languages;;
+Disease_section <- ui_external_languages;
+=>nrel_main_idtf:
+[Diseases section](*<-lang_en;;*);
+[Раздел заболеваний](*<-lang_ru;;*);;
+
