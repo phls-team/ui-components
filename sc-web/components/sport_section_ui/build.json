@@ -1,0 +1,11 @@
+{
+     "sources": [
+        
+        "src/sport-common.js",
+        "src/sport-paintPanel.js"
+    ],
+
+    "component": "src/sport-component.js",
+
+    "target": "static/components/js/sport_section/sport_section.js"
+}

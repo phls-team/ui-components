@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     var scgDirPath = 'components/scg/';
     var scsDirPath = 'components/scs/';
     var diseaseSectionDirPath = 'components/disease-section-ui/';
+    var sportSectionDirPath = 'components/sport_section_ui/';
     var webCoreCompPath = 'client/js/';
     var clientJsDirPath = 'client/static/components/js/';
     var clientCssDirPath = 'client/static/components/css/';
@@ -113,7 +114,14 @@ module.exports = function(grunt) {
                         diseaseSectionDirPath + 'src/disease-section-paintPanel.js'
                     ],
                     dest: diseaseSectionDirPath + 'static/components/js/disease-section-ui/disease-section.js'
-                }
+                },
+ sportSection: {
+                src: [sportSectionDirPath + 'src/sport-common.js',
+                    sportSectionDirPath + 'src/sport-component.js',
+                    sportSectionDirPath + 'src/sport-paintPanel.js'
+                ],
+                dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
+            }
         },
         copy: {
             githubJs: {
@@ -151,6 +159,13 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true
           },
+  	    sportSectionJs: {
+                cwd: sportSectionDirPath + 'static/components/js/sport_section/',
+                src: 'sport_section.js',
+                dest: clientJsDirPath + 'sport_section/',
+                expand: true,
+                flatten: true
+            },
             githubCss: {
                 cwd: githubDirPath + 'static/components/css/',
                 src: 'github.css',
@@ -233,6 +248,10 @@ module.exports = function(grunt) {
                   files: diseaseSectionDirPath + 'src/**',
                   tasks: ['concat:diseaseSection', 'copy:diseaseSectionJs'],
               },
+            sportSectionJs: {
+                files: sportSectionDirPath + 'src/**',
+                tasks: ['concat:sportSection', 'copy:sportSectionJs'],
+            },
             githubCss: {
                 files: githubDirPath + 'static/components/css/**',
                 tasks: ['copy:githubCss'],
