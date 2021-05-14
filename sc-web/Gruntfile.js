@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     var healthyLifestyleDirPath = 'components/healthy_section_ui/';
     var sportSectionDirPath = 'components/sport_section_ui/';
     var healthSectionDirPath = 'components/health_section_ui/';
+    var trainingSectionDirPath = 'components/training_section_ui/';
     var webCoreCompPath = 'client/js/';
     var clientJsDirPath = 'client/static/components/js/';
     var clientCssDirPath = 'client/static/components/css/';
@@ -130,13 +131,18 @@ module.exports = function(grunt) {
                     sportSectionDirPath + 'src/sport-paintPanel.js'
                 ],
                 dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
-            },
             healthSection: {
                 src:[healthSectionDirPath + 'src/health-common.js',
                     healthSectionDirPath + 'src/health-component.js',
                     healthSectionDirPath + 'src/health-paintPanel.js'
             ],
                 dest: healthSectionDirPath + 'static/components/js/health_section/health_section.js'
+	trainingSection: {
+                src: [trainingSectionDirPath + 'src/training-common.js',
+                    trainingSectionDirPath + 'src/training-component.js',
+                    trainingSectionDirPath + 'src/training-paintPanel.js'
+                ],
+                dest: trainingSectionDirPath + 'static/components/js/training_section/training_section.js'
             }
         },
         copy: {
@@ -196,6 +202,13 @@ module.exports = function(grunt) {
                 expand: true,
                 flatten: true
         },
+	   trainingSectionJs: {
+                cwd: trainingSectionDirPath + 'static/components/js/training_section/',
+                src: 'training_section.js',
+                dest: clientJsDirPath + 'training_section/',
+                expand: true,
+                flatten: true
+            },
             githubCss: {
                 cwd: githubDirPath + 'static/components/css/',
                 src: 'github.css',
@@ -288,7 +301,11 @@ module.exports = function(grunt) {
             },
             healthSectionJs: {
               files: healthSectionDirPath + 'src/**',
-              tasks:   ['concat:healthSection', 'copy:healthSectionJs']        
+              tasks:   ['concat:healthSection', 'copy:healthSectionJs']
+           },
+	    trainingSectionJs: {
+                files: trainingSectionDirPath + 'src/**',
+                tasks: ['concat:trainingSection', 'copy:trainingSectionJs'],
             },
             githubCss: {
                 files: githubDirPath + 'static/components/css/**',
