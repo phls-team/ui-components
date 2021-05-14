@@ -2,11 +2,11 @@
  * Paint panel.
  */
 
-Example.PaintPanel = function (containerId) {
+training_section.PaintPanel = function (containerId) {
     this.containerId = containerId;
 };
 
-Example.PaintPanel.prototype = {
+training_section.PaintPanel.prototype = {
 
     init: function () {
         this._initMarkup(this.containerId);
