@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     var diseaseSectionDirPath = 'components/disease-section-ui/';
     var healthyLifestyleDirPath = 'components/healthy_section_ui/';
     var sportSectionDirPath = 'components/sport_section_ui/';
+    var healthSectionDirPath = 'components/health_section_ui/';
     var webCoreCompPath = 'client/js/';
     var clientJsDirPath = 'client/static/components/js/';
     var clientCssDirPath = 'client/static/components/css/';
@@ -129,6 +130,13 @@ module.exports = function(grunt) {
                     sportSectionDirPath + 'src/sport-paintPanel.js'
                 ],
                 dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
+            },
+            healthSection: {
+                src:[healthSectionDirPath + 'src/health-common.js',
+                    healthSectionDirPath + 'src/health-component.js',
+                    healthSectionDirPath + 'src/health-paintPanel.js'
+            ],
+                dest: healthSectionDirPath + 'static/components/js/health_section/health_section.js'
             }
         },
         copy: {
@@ -181,6 +189,13 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true
           },
+        healthSectionJs: {
+                cwd: healthSectionDirPath + 'static/components/js/sportSectionDirPath/',
+                src: 'health_section.js',
+                dest: clientJsDirPath + 'health_section/',
+                expand: true,
+                flatten: true
+        },
             githubCss: {
                 cwd: githubDirPath + 'static/components/css/',
                 src: 'github.css',
@@ -270,6 +285,10 @@ module.exports = function(grunt) {
             sportSectionJs: {
                 files: sportSectionDirPath + 'src/**',
                 tasks: ['concat:sportSection', 'copy:sportSectionJs'],
+            },
+            healthSectionJs: {
+              files: healthSectionDirPath + 'src/**',
+              tasks:   ['concat:healthSection', 'copy:healthSectionJs']        
             },
             githubCss: {
                 files: githubDirPath + 'static/components/css/**',
