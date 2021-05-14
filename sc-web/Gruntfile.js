@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     var scsDirPath = 'components/scs/';
     var diseaseSectionDirPath = 'components/disease-section-ui/';
     var sportSectionDirPath = 'components/sport_section_ui/';
+    var trainingSectionDirPath = 'components/training_section_ui/';
     var webCoreCompPath = 'client/js/';
     var clientJsDirPath = 'client/static/components/js/';
     var clientCssDirPath = 'client/static/components/css/';
@@ -121,6 +122,13 @@ module.exports = function(grunt) {
                     sportSectionDirPath + 'src/sport-paintPanel.js'
                 ],
                 dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
+            },
+trainingSection: {
+                src: [trainingSectionDirPath + 'src/training-common.js',
+                    trainingSectionDirPath + 'src/training-component.js',
+                    trainingSectionDirPath + 'src/training-paintPanel.js'
+                ],
+                dest: trainingSectionDirPath + 'static/components/js/training_section/training_section.js'
             }
         },
         copy: {
@@ -163,6 +171,13 @@ module.exports = function(grunt) {
                 cwd: sportSectionDirPath + 'static/components/js/sport_section/',
                 src: 'sport_section.js',
                 dest: clientJsDirPath + 'sport_section/',
+                expand: true,
+                flatten: true
+            },
+	   trainingSectionJs: {
+                cwd: trainingSectionDirPath + 'static/components/js/training_section/',
+                src: 'training_section.js',
+                dest: clientJsDirPath + 'training_section/',
                 expand: true,
                 flatten: true
             },
@@ -251,6 +266,10 @@ module.exports = function(grunt) {
             sportSectionJs: {
                 files: sportSectionDirPath + 'src/**',
                 tasks: ['concat:sportSection', 'copy:sportSectionJs'],
+            },
+	    trainingSectionJs: {
+                files: trainingSectionDirPath + 'src/**',
+                tasks: ['concat:trainingSection', 'copy:trainingSectionJs'],
             },
             githubCss: {
                 files: githubDirPath + 'static/components/css/**',
