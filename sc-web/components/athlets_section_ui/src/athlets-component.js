@@ -1,18 +1,18 @@
 /**
- * Example component.
+ * athlets_section component.
  */
-Example.DrawComponent = {
+athlets_section.DrawComponent = {
     ext_lang: 'athlets_section',
     formats: ['athlets_json'],
     struct_support: true,
     factory: function (sandbox) {
-        return new Example.DrawWindow(sandbox);
+        return new athlets_section.DrawWindow(sandbox);
     }
 };
 
-Example.DrawWindow = function (sandbox) {
+athlets_section.DrawWindow = function (sandbox) {
     this.sandbox = sandbox;
-    this.paintPanel = new Example.PaintPanel(this.sandbox.container);
+    this.paintPanel = new athlets_section.PaintPanel(this.sandbox.container);
     this.paintPanel.init();
     this.recieveData = function (data) {
         console.log("in recieve data" + data);
@@ -91,4 +91,4 @@ Example.DrawWindow = function (sandbox) {
     this.sandbox.eventStructUpdate = $.proxy(this.eventStructUpdate, this);
     this.sandbox.updateContent();
 };
-SCWeb.core.ComponentManager.appendComponentInitialize(Example.DrawComponent);
+SCWeb.core.ComponentManager.appendComponentInitialize(athlets_section.DrawComponent);

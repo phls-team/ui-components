@@ -1,4 +1,4 @@
-var Example = {};
+var fruits_and_vegetables_section = {};
 
 function extend(child, parent) {
     var F = function () {
@@ -10,20 +10,20 @@ function extend(child, parent) {
 }
 
 /**
- * Example component.
+ * fruits_and_vegetables_section component.
  */
-Example.DrawComponent = {
+fruits_and_vegetables_section.DrawComponent = {
     ext_lang: 'fruits_and_vegetables_section',
     formats: ['fruits_and_vegetables_json'],
     struct_support: true,
     factory: function (sandbox) {
-        return new Example.DrawWindow(sandbox);
+        return new fruits_and_vegetables_section.DrawWindow(sandbox);
     }
 };
 
-Example.DrawWindow = function (sandbox) {
+fruits_and_vegetables_section.DrawWindow = function (sandbox) {
     this.sandbox = sandbox;
-    this.paintPanel = new Example.PaintPanel(this.sandbox.container);
+    this.paintPanel = new fruits_and_vegetables_section.PaintPanel(this.sandbox.container);
     this.paintPanel.init();
     this.recieveData = function (data) {
         console.log("in recieve data" + data);
@@ -102,17 +102,17 @@ Example.DrawWindow = function (sandbox) {
     this.sandbox.eventStructUpdate = $.proxy(this.eventStructUpdate, this);
     this.sandbox.updateContent();
 };
-SCWeb.core.ComponentManager.appendComponentInitialize(Example.DrawComponent);
+SCWeb.core.ComponentManager.appendComponentInitialize(fruits_and_vegetables_section.DrawComponent);
 
 /**
  * Paint panel.
  */
 
-Example.PaintPanel = function (containerId) {
+fruits_and_vegetables_section.PaintPanel = function (containerId) {
     this.containerId = containerId;
 };
 
-Example.PaintPanel.prototype = {
+fruits_and_vegetables_section.PaintPanel.prototype = {
 
     init: function () {
         this._initMarkup(this.containerId);

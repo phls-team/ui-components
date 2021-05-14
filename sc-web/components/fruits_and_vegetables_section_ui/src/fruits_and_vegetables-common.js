@@ -1,4 +1,4 @@
-var Example = {};
+var fruits_and_vegetables_section = {};
 
 function extend(child, parent) {
     var F = function () {

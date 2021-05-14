@@ -1,4 +1,4 @@
-var Example = {};
+var athlets_section = {};
 
 function extend(child, parent) {
     var F = function () {
