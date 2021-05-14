@@ -2,12 +2,12 @@ sport_json
 <- sc_node_not_relation;
 <- format;
 => nrel_main_idtf: 
-	[формат интерфейса раздела спорт] 
+	[формат интерфейса раздела тренировки] 
 	(* 
 	<- lang_ru;;
 	 *);
 => nrel_main_idtf: 
-	[format of disease section sport] 
+	[format of section training] 
 	(* 
 	<- lang_en;;
 	*);
