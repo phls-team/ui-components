@@ -1,0 +1,41 @@
+#interface {
+  text-align: center;
+  font-family: Arial;
+  margin-top: 3%;
+}
+
+a { 
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+ }
+
+a:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание 
+                                   при наведении курсора мыши на ссылку */
+    color: red; /* Ссылка красного цвета */
+   } 
+
+#choose-btn, #search-btn, #choose-sport-nutrition{
+    text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 45px;
+  border-radius:10px;
+  margin: 5px 5px;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 100;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;;
+}
+
+#choose-btn, #search-btn, #choose-sport-nutrition:hover {
+ background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(193, 241, 243, 1);
+  color: white;
+  transform: translateY(-5px);
+}

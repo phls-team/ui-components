@@ -1,0 +1,15 @@
+athlets_json
+<- sc_node_not_relation;
+<- format;
+=> nrel_main_idtf: 
+	[формат интерфейса раздела спортсмены] 
+	(* 
+	<- lang_ru;;
+	 *);
+=> nrel_main_idtf: 
+	[format of disease section athlets] 
+	(* 
+	<- lang_en;;
+	*);
+=> nrel_mimetype:
+	[application/json];;
