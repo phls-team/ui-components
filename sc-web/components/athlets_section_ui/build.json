@@ -1,0 +1,11 @@
+{
+     "sources": [
+        
+        "src/athlets-common.js",
+        "src/athlets-paintPanel.js"
+    ],
+
+    "component": "src/athlets-component.js",
+
+    "target": "static/components/js/athlets_section/athlets_section.js"
+}

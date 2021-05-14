@@ -1,0 +1,11 @@
+{
+     "sources": [
+        
+        "src/fruits_and_vegetables-common.js",
+        "src/fruits_and_vegetables-paintPanel.js"
+    ],
+
+    "component": "src/fruits_and_vegetables-component.js",
+
+    "target": "static/components/js/fruits_and_vegetables_section/fruits_and_vegetables_section.js"
+}

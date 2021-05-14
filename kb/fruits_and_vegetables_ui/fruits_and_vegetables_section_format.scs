@@ -1,0 +1,15 @@
+fruits_and_vegetables_json
+<- sc_node_not_relation;
+<- format;
+=> nrel_main_idtf: 
+	[формат интерфейса раздела фруктов и овощей] 
+	(* 
+	<- lang_ru;;
+	 *);
+=> nrel_main_idtf: 
+	[format of disease section fruits and vegetables] 
+	(* 
+	<- lang_en;;
+	*);
+=> nrel_mimetype:
+	[application/json];;
