@@ -1,0 +1,11 @@
+{
+     "sources": [
+        
+        "src/training-common.js",
+        "src/training-paintPanel.js"
+    ],
+
+    "component": "src/training-component.js",
+
+    "target": "static/components/js/training_section/training_section.js"
+}
