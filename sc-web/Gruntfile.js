@@ -5,9 +5,8 @@ module.exports = function(grunt) {
     var scgDirPath = 'components/scg/';
     var scsDirPath = 'components/scs/';
     var diseaseSectionDirPath = 'components/disease-section-ui/';
+    var healthyLifestyleDirPath = 'components/healthy_section_ui/';
     var sportSectionDirPath = 'components/sport_section_ui/';
-    var athletsSectionDirPath = 'components/athlets_section_ui/';
-    var fruits_and_vegetablesSectionDirPath = 'components/fruits_and_vegetables_section_ui/';
     var webCoreCompPath = 'client/js/';
     var clientJsDirPath = 'client/static/components/js/';
     var clientCssDirPath = 'client/static/components/css/';
@@ -116,27 +115,20 @@ module.exports = function(grunt) {
                         diseaseSectionDirPath + 'src/disease-section-paintPanel.js'
                     ],
                     dest: diseaseSectionDirPath + 'static/components/js/disease-section-ui/disease-section.js'
-            },
+                },
+            healthySection: {
+                    src: [healthyLifestyleDirPath + 'src/healthy-section-common.js',
+                        healthyLifestyleDirPath + 'src/healthy-section-component.js',
+                        healthyLifestyleDirPath + 'src/healthy-section-paintPanel.js'
+                    ],
+                    dest: healthyLifestyleDirPath + 'static/components/js/healthy_section_ui/healthy-section.js'                 
+                },
             sportSection: {
-                    src: [sportSectionDirPath + 'src/sport-common.js',
-                        sportSectionDirPath + 'src/sport-component.js',
-                        sportSectionDirPath + 'src/sport-paintPanel.js'
-                    ],
-                    dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
-            },
-            athletsSection: {
-                    src: [athletsSectionDirPath + 'src/athlets-common.js',
-                        athletsSectionDirPath + 'src/athlets-component.js',
-                        athletsSectionDirPath + 'src/athlets-paintPanel.js'
-                    ],
-                    dest: athletsSectionDirPath + 'static/components/js/athlets_section/athlets_section.js'
-            },
-            fruits_and_vegetablesSection: {
-                    src: [fruits_and_vegetablesSectionDirPath + 'src/fruits_and_vegetables-common.js',
-                        fruits_and_vegetablesSectionDirPath + 'src/fruits_and_vegetables-component.js',
-                        fruits_and_vegetablesSectionDirPath + 'src/fruits_and_vegetables-paintPanel.js'
-                    ],
-                    dest: fruits_and_vegetablesSectionDirPath + 'static/components/js/fruits_and_vegetables_section/fruits_and_vegetables_section.js'
+                src: [sportSectionDirPath + 'src/sport-common.js',
+                    sportSectionDirPath + 'src/sport-component.js',
+                    sportSectionDirPath + 'src/sport-paintPanel.js'
+                ],
+                dest: sportSectionDirPath + 'static/components/js/sport_section/sport_section.js'
             }
         },
         copy: {
@@ -175,27 +167,20 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true
           },
-  	    sportSectionJs: {
+  	        sportSectionJs: {
                 cwd: sportSectionDirPath + 'static/components/js/sport_section/',
                 src: 'sport_section.js',
                 dest: clientJsDirPath + 'sport_section/',
                 expand: true,
                 flatten: true
             },
-  	    athletsSectionJs: {
-                cwd: athletsSectionDirPath + 'static/components/js/athlets_section/',
-                src: 'athlets_section.js',
-                dest: clientJsDirPath + 'athlets_section/',
-                expand: true,
-                flatten: true
-            },
-  	    fruits_and_vegetablesSectionJs: {
-                cwd: fruits_and_vegetablesSectionDirPath + 'static/components/js/fruits_and_vegetables_section/',
-                src: 'fruits_and_vegetables_section.js',
-                dest: clientJsDirPath + 'fruits_and_vegetables_section/',
-                expand: true,
-                flatten: true
-            },
+            healthySectionJs: {
+              cwd: healthyLifestyleDirPath + 'static/components/js/healthy_section_ui/',
+              src: 'healthy-section.js',
+              dest: clientJsDirPath + 'healthy_section_ui/',
+              expand: true,
+              flatten: true
+          },
             githubCss: {
                 cwd: githubDirPath + 'static/components/css/',
                 src: 'github.css',
@@ -278,17 +263,13 @@ module.exports = function(grunt) {
                   files: diseaseSectionDirPath + 'src/**',
                   tasks: ['concat:diseaseSection', 'copy:diseaseSectionJs'],
               },
+            healthySectionJs: {
+                  files: healthyLifestyleDirPath + 'src/**',
+                  tasks: ['concat:healthySection', 'copy:healthySectionJs'],
+              },
             sportSectionJs: {
                 files: sportSectionDirPath + 'src/**',
                 tasks: ['concat:sportSection', 'copy:sportSectionJs'],
-            },
-            athletsSectionJs: {
-                files: athletsSectionDirPath + 'src/**',
-                tasks: ['concat:athletsSection', 'copy:athletsSectionJs'],
-            },
-            fruits_and_vegetablesSectionJs: {
-                files: fruits_and_vegetablesSectionDirPath + 'src/**',
-                tasks: ['concat:fruits_and_vegetablesSection', 'copy:fruits_and_vegetablesSectionJs'],
             },
             githubCss: {
                 files: githubDirPath + 'static/components/css/**',

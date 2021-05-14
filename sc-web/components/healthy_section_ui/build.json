@@ -1,0 +1,11 @@
+{
+     "sources": [
+
+        "src/healthy-section-common.js",
+        "src/healthy-section-paintPanel.js"
+    ],
+
+    "component": "src/healthy-section-component.js",
+
+    "target": "static/components/js/healthy_section_ui/project_healthy-section.js"
+}
